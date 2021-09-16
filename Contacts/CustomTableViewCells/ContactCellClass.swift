@@ -15,6 +15,11 @@ class ContactCellClass: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var detailInfoLabel: UILabel!
     
+    func configure(withContact contact: Contact) {
+        contactImageView.image = contact.image
+        userNameLabel.text = contact.contactName
+        detailInfoLabel.text = contact.contactDetailInfo
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
