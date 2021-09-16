@@ -25,9 +25,12 @@
                                 <constraint firstAttribute="height" constant="36" id="TKi-op-8E3"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                            <state key="normal" title="Delete section">
+                            <state key="normal" title="Close section">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="closeSectionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="UI8-M4-4Vf"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osY-b9-zwO">
                             <rect key="frame" x="158" y="7" width="118" height="36"/>
@@ -40,6 +43,9 @@
                             <state key="normal" title="New contact">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="newContactButtontapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="JqN-4A-FBM"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-Gj-8im">
                             <rect key="frame" x="5" y="7" width="143" height="36"/>

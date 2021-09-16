@@ -10,10 +10,10 @@ import UIKit
 class ContactsViewController: UIViewController {
 
     var contactsDataSource = [
-        [Contact(),Contact(),Contact(),Contact(),Contact()],
-        [Contact(),Contact()],
-        [Contact(),Contact(),Contact()],
-        [Contact(),Contact(),Contact(),Contact(),Contact(),Contact()]
+        ContactsGroup(withNumberOfContacts: 3),
+        ContactsGroup(withNumberOfContacts: 4),
+        ContactsGroup(withNumberOfContacts: 2),
+
     ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,7 +23,7 @@ class ContactsViewController: UIViewController {
 
         title = "Contacts"
         let textAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 50, weight: .bold),
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
@@ -47,9 +47,16 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if !contactsDataSource[indexPath.section].isExpanded {
+            return 0
+        }
+        return 90
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeaderViewClass.reuseIdentifier) as? CustomHeaderViewClass else { return UIView()}
-        
+        headerView.configureWith(section: section, delegate: self)
         
         return headerView
     }
@@ -59,19 +66,25 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactsDataSource[section].count
+        return contactsDataSource[section].contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactCellClass.reuseIdentifier, for: indexPath)
                 as? ContactCellClass else { return UITableViewCell() }
-        let contact = contactsDataSource[indexPath.section][indexPath.row]
+        let contact = contactsDataSource[indexPath.section].contacts[indexPath.row]
         cell.configure(withContact: contact)
         
         return cell
     }
-    
-    
-    
+}
+
+extension ContactsViewController: CustomHeaderViewClassDelegate {
+    func toggleSectionVisibility(forSection section: Int) {
+        contactsDataSource[section].isExpanded = !contactsDataSource[section].isExpanded
+        tableView.beginUpdates()
+        tableView.reloadSections([section], with: .automatic)
+        tableView.endUpdates()
+    }
     
 }
