@@ -47,14 +47,14 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-Gj-8im">
-                            <rect key="frame" x="5" y="7" width="143" height="36"/>
+                            <rect key="frame" x="10" y="7" width="138" height="36"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="TQB-Gj-8im" firstAttribute="leading" secondItem="pSV-ca-Ze3" secondAttribute="leading" constant="5" id="2ez-Nb-XaX"/>
+                        <constraint firstItem="TQB-Gj-8im" firstAttribute="leading" secondItem="pSV-ca-Ze3" secondAttribute="leading" constant="10" id="2ez-Nb-XaX"/>
                         <constraint firstItem="TQB-Gj-8im" firstAttribute="top" secondItem="pSV-ca-Ze3" secondAttribute="top" constant="7" id="T4Q-o7-0Hd"/>
                         <constraint firstItem="osY-b9-zwO" firstAttribute="top" secondItem="pSV-ca-Ze3" secondAttribute="top" constant="7" id="V43-ED-eW9"/>
                         <constraint firstAttribute="trailing" secondItem="IsZ-kq-4qp" secondAttribute="trailing" constant="10" id="YfM-Da-yRR"/>

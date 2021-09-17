@@ -73,11 +73,7 @@ class ContactsViewController: UIViewController {
 //MARK: UITableViewDelegate and UITableViewDataSource
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//    }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
@@ -140,16 +136,12 @@ extension ContactsViewController: CustomHeaderViewClassDelegate {
     }
     
     func createNewContact(forSection section: Int) {
-        if !contactsDataSource[section].isExpanded {
-            return
-        }
-//        contactsDataSource[section].createNewContact()
+        if !contactsDataSource[section].isExpanded { return }
         
         let popup = AddUserPopUpViewController.create(forSection: section, withDelegate: self)
         let sbPopup = SBCardPopupViewController(contentViewController: popup)
         sbPopup.cornerRadius = 20
         sbPopup.show(onViewController: self)
-        
     }
 }
 
@@ -162,6 +154,4 @@ extension ContactsViewController: AddUserPopUpViewControllerDelegate {
         tableView.insertRows(at: [indexPathToInsert], with: (contactsDataSource[section].contacts.count % 2 == 1) ? .left : .right)
         tableView.endUpdates()
     }
-    
-    
 }

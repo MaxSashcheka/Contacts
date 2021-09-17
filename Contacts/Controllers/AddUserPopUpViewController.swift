@@ -22,6 +22,7 @@ class AddUserPopUpViewController: UIViewController, SBCardPopupContent {
     var delegate: AddUserPopUpViewControllerDelegate!
     
     // MARK: - Outlets
+    
     @IBOutlet weak var enterContactLabel: UILabel!
     @IBOutlet weak var enterContactMessageLabel: UILabel!
     
@@ -60,6 +61,19 @@ class AddUserPopUpViewController: UIViewController, SBCardPopupContent {
         contact.contactDetailInfo = contactMessageTextField.text ?? "No message"
 
         delegate.saveNewContact(contact: contact, forSection: currentSection)
+        self.popupDismisser?.dismiss()
+    }
+    
+    
+    @IBAction func createRandom(_ sender: Any) {
+        let contact = ContactsGroup.createNewContact()
+        delegate.saveNewContact(contact: contact, forSection: currentSection)
+
+        self.popupDismisser?.dismiss()
+    }
+    
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
         self.popupDismisser?.dismiss()
     }
     

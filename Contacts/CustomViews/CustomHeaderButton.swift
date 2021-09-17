@@ -26,8 +26,6 @@ class CustomHeaderButton: UIButton {
         layer.shadowRadius = 3
         layer.shadowOpacity = 1.0
         layer.shadowOffset = .zero
-
-//        contentEdgeInsets = UIEdgeInsets(top: 5.0, left: 21.0, bottom: 5.0, right: 21.0)
         layer.cornerRadius = 15
         
         let font = UIFont.montserrat(14.0, .medium)

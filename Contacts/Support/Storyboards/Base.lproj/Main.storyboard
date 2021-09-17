@@ -44,11 +44,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddUserPopUpViewController" id="RX7-kx-qkb" customClass="AddUserPopUpViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MMa-RK-Vvb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bU-Vs-PDP">
-                                <rect key="frame" x="20" y="15" width="374" height="30"/>
+                                <rect key="frame" x="40" y="15" width="334" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oTR-Bw-oW8"/>
                                 </constraints>
@@ -101,13 +101,36 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnd-7Z-dXS" customClass="CustomHeaderButton" customModule="Contacts" customModuleProvider="target">
-                                <rect key="frame" x="138" y="250" width="138" height="35"/>
+                                <rect key="frame" x="30" y="255" width="138" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="TGV-qy-UMZ"/>
+                                    <constraint firstAttribute="height" constant="38" id="teW-t9-nfX"/>
                                 </constraints>
                                 <state key="normal" title="Save contact"/>
                                 <connections>
                                     <action selector="saveContact:" destination="RX7-kx-qkb" eventType="touchUpInside" id="mRq-c4-akj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmh-vX-byZ" customClass="CustomHeaderButton" customModule="Contacts" customModuleProvider="target">
+                                <rect key="frame" x="246" y="255" width="138" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="GD7-Qy-Fpp"/>
+                                    <constraint firstAttribute="height" constant="38" id="Rs0-iQ-7Om"/>
+                                </constraints>
+                                <state key="normal" title="Create random"/>
+                                <connections>
+                                    <action selector="createRandom:" destination="RX7-kx-qkb" eventType="touchUpInside" id="Gio-7G-7Ju"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQO-7m-E4U" customClass="DismissButton" customModule="Contacts" customModuleProvider="target">
+                                <rect key="frame" x="370" y="10" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="D20-F4-zie"/>
+                                    <constraint firstAttribute="height" constant="34" id="ovx-CL-DAp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="RX7-kx-qkb" eventType="touchUpInside" id="MoC-wJ-7bm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,29 +139,34 @@
                         <constraints>
                             <constraint firstItem="VXN-dI-YWI" firstAttribute="leading" secondItem="bcQ-7F-XOw" secondAttribute="leading" constant="20" id="2JU-VF-xxa"/>
                             <constraint firstItem="bcQ-7F-XOw" firstAttribute="trailing" secondItem="jqc-LZ-yJ0" secondAttribute="trailing" constant="20" id="2e5-ht-4NS"/>
+                            <constraint firstItem="bcQ-7F-XOw" firstAttribute="bottom" secondItem="Lnd-7Z-dXS" secondAttribute="bottom" constant="17" id="301-zS-z5S"/>
+                            <constraint firstItem="nmh-vX-byZ" firstAttribute="top" secondItem="jqc-LZ-yJ0" secondAttribute="bottom" constant="20" id="4o0-5h-FVX"/>
                             <constraint firstItem="1mE-n0-Ryw" firstAttribute="leading" secondItem="bcQ-7F-XOw" secondAttribute="leading" constant="20" id="6WO-19-PHN"/>
                             <constraint firstItem="bcQ-7F-XOw" firstAttribute="trailing" secondItem="c1e-LD-Y7j" secondAttribute="trailing" constant="20" id="84o-qZ-Uiv"/>
-                            <constraint firstItem="bcQ-7F-XOw" firstAttribute="bottom" secondItem="Lnd-7Z-dXS" secondAttribute="bottom" constant="15" id="ITj-dO-maO"/>
+                            <constraint firstItem="bcQ-7F-XOw" firstAttribute="trailing" secondItem="nmh-vX-byZ" secondAttribute="trailing" constant="30" id="BfG-wQ-xHc"/>
                             <constraint firstItem="HtQ-ZR-inB" firstAttribute="leading" secondItem="bcQ-7F-XOw" secondAttribute="leading" constant="20" id="Kv8-j5-IAt"/>
-                            <constraint firstItem="Lnd-7Z-dXS" firstAttribute="top" secondItem="jqc-LZ-yJ0" secondAttribute="bottom" constant="15" id="NHZ-Et-prm"/>
-                            <constraint firstItem="Lnd-7Z-dXS" firstAttribute="centerX" secondItem="MMa-RK-Vvb" secondAttribute="centerX" id="NIJ-o0-xfX"/>
                             <constraint firstItem="bcQ-7F-XOw" firstAttribute="trailing" secondItem="HtQ-ZR-inB" secondAttribute="trailing" constant="20" id="OP2-Ut-lp7"/>
                             <constraint firstItem="VXN-dI-YWI" firstAttribute="top" secondItem="HtQ-ZR-inB" secondAttribute="bottom" constant="5" id="Q4C-XJ-sZI"/>
                             <constraint firstItem="HtQ-ZR-inB" firstAttribute="top" secondItem="c1e-LD-Y7j" secondAttribute="bottom" constant="10" id="Rzj-Ze-xvV"/>
                             <constraint firstItem="jqc-LZ-yJ0" firstAttribute="top" secondItem="VXN-dI-YWI" secondAttribute="bottom" constant="15" id="VdO-eA-ly4"/>
                             <constraint firstItem="c1e-LD-Y7j" firstAttribute="leading" secondItem="bcQ-7F-XOw" secondAttribute="leading" constant="20" id="XEl-bO-1nU"/>
+                            <constraint firstItem="Lnd-7Z-dXS" firstAttribute="leading" secondItem="bcQ-7F-XOw" secondAttribute="leading" constant="30" id="XYR-Yf-DiH"/>
                             <constraint firstItem="bcQ-7F-XOw" firstAttribute="trailing" secondItem="1mE-n0-Ryw" secondAttribute="trailing" constant="20" id="ZWg-JF-EQp"/>
+                            <constraint firstItem="bcQ-7F-XOw" firstAttribute="bottom" secondItem="nmh-vX-byZ" secondAttribute="bottom" constant="17" id="c3H-bf-Yax"/>
                             <constraint firstItem="bcQ-7F-XOw" firstAttribute="trailing" secondItem="VXN-dI-YWI" secondAttribute="trailing" constant="20" id="duE-E3-ygM"/>
+                            <constraint firstItem="Lnd-7Z-dXS" firstAttribute="top" secondItem="jqc-LZ-yJ0" secondAttribute="bottom" constant="20" id="jUn-qY-c4K"/>
                             <constraint firstItem="5bU-Vs-PDP" firstAttribute="top" secondItem="MMa-RK-Vvb" secondAttribute="top" constant="15" id="o6S-Ea-brD"/>
                             <constraint firstItem="1mE-n0-Ryw" firstAttribute="top" secondItem="5bU-Vs-PDP" secondAttribute="bottom" constant="20" id="rDa-cf-7QW"/>
                             <constraint firstItem="jqc-LZ-yJ0" firstAttribute="leading" secondItem="bcQ-7F-XOw" secondAttribute="leading" constant="20" id="rUY-Cl-JTK"/>
-                            <constraint firstItem="5bU-Vs-PDP" firstAttribute="leading" secondItem="MMa-RK-Vvb" secondAttribute="leading" constant="20" id="urK-nz-dNP"/>
-                            <constraint firstAttribute="trailing" secondItem="5bU-Vs-PDP" secondAttribute="trailing" constant="20" id="xK9-nC-x0p"/>
+                            <constraint firstItem="5bU-Vs-PDP" firstAttribute="leading" secondItem="MMa-RK-Vvb" secondAttribute="leading" constant="40" id="urK-nz-dNP"/>
+                            <constraint firstItem="tQO-7m-E4U" firstAttribute="top" secondItem="MMa-RK-Vvb" secondAttribute="top" constant="10" id="vj3-Kf-tjr"/>
+                            <constraint firstAttribute="trailing" secondItem="5bU-Vs-PDP" secondAttribute="trailing" constant="40" id="xK9-nC-x0p"/>
                             <constraint firstItem="c1e-LD-Y7j" firstAttribute="top" secondItem="1mE-n0-Ryw" secondAttribute="bottom" constant="5" id="xUi-57-afH"/>
+                            <constraint firstAttribute="trailing" secondItem="tQO-7m-E4U" secondAttribute="trailing" constant="10" id="znY-pS-DP7"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="300"/>
+                    <size key="freeformSize" width="414" height="310"/>
                     <connections>
                         <outlet property="contactMessageTextField" destination="VXN-dI-YWI" id="pfO-NV-6GP"/>
                         <outlet property="contactNameTextField" destination="c1e-LD-Y7j" id="fbo-Kc-5I8"/>
