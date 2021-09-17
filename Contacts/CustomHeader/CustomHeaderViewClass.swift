@@ -9,6 +9,7 @@ import UIKit
 
 protocol CustomHeaderViewClassDelegate {
     func toggleSectionVisibility(forSection section: Int)
+    func createNewContact(forSection section: Int)
 }
 
 class CustomHeaderViewClass: UITableViewHeaderFooterView {
@@ -20,27 +21,40 @@ class CustomHeaderViewClass: UITableViewHeaderFooterView {
     
     @IBOutlet weak var sectionNameLabel: UILabel!
     @IBOutlet weak var newContactButton: UIButton!
-    @IBOutlet weak var deleteButtonContact: UIButton!
+    @IBOutlet weak var closeExpandButton: UIButton!
+    
+    var isExpanded = true
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         newContactButton.layer.cornerRadius = newContactButton.bounds.height / 4
-        deleteButtonContact.layer.cornerRadius = deleteButtonContact.bounds.height / 4
+        closeExpandButton.layer.cornerRadius = closeExpandButton.bounds.height / 4
+        newContactButton.setup()
+        closeExpandButton.setup()
+
     }
-    
     
     @IBAction func newContactButtontapped(_ sender: Any) {
-        
+        delegate.createNewContact(forSection: currentSection)
     }
+
     
-    @IBAction func closeSectionButtonTapped(_ sender: UIButton) {
+    @IBAction func closeExpandSectionButtonTapped(_ sender: UIButton) {
+        isExpanded = !isExpanded
+        if isExpanded {
+            sender.setTitle("Close section", for: .normal)
+        } else {
+            sender.setTitle("Expand section", for: .normal)
+        }
         delegate.toggleSectionVisibility(forSection: currentSection)
     }
     
     
-    func configureWith(section: Int, delegate: CustomHeaderViewClassDelegate) {
+    func configureWith(section: Int, delegate: CustomHeaderViewClassDelegate, sectionName: String) {
         self.currentSection = section
         self.delegate = delegate
+        self.sectionNameLabel.text = "Section: \(sectionName)"
         
     }
     

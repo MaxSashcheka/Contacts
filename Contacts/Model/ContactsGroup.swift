@@ -11,12 +11,26 @@ struct ContactsGroup {
     
     var isExpanded = true
     var contacts = [Contact]()
+    var sectionName: String
     
     init(withNumberOfContacts count: Int) {
         for _ in 0..<count {
             contacts.append(Contact())
         }
+        
+        let randomSectionNameIndex = Int.random(in: 0..<sectionNames.count)
+        sectionName = sectionNames[randomSectionNameIndex]
+        
     }
+    
+    mutating func createNewContact() {
+        let newContact = Contact()
+        contacts.insert(newContact, at: 0)
+    }
+    
+    private let sectionNames = [
+        "Friends", "Best frietds", "Classmates", "Groupmates"
+    ]
     
     struct Contact {
         
@@ -36,12 +50,9 @@ struct ContactsGroup {
         }
         
         private let names = [
-            "Tiah Mccarthy", "Corbin Wiggins", "Radhika Reyes", "Sachin Navarro", "Arianne Sullivan",
-            "Finlay Sparks", "Daniyal Hodgson", "Eileen Peters", "Wendy Browning", "Kalum Kirby",
-            "Tania Hayward", "Sunil Zuniga", "Macie Choi", "Nelly Storey", "Nathalie Bolton",
-            "Marina Robertson", "Mari Mccray", "Willa Wallis", "Cynthia Pace", "Serenity Travers", "Shola Osborn",
-            "Lorelai Cunningham", "Abul Roberson", "Ashlea North", "Connagh Knox", "Usaamah Morin",
-            "Emilija Sandoval", "Carlos Decker", "Monet Akhtar", "Nial Whitworth"
+            "Max Sashcheka", "Artem Malashkevich", "Denis Skuarat", "Artem Martsev", "Anna Kamenkova",
+            "Ruslan Deminsky", "Gleb King", "Dmitri Kapchan", "Roman Pinchuk", "Natalia Morozova",
+            "Angelina Borzdakova", "Evgeni Leshenko", "Nikita Gurski"
         ]
         
         private let detailInfo = [

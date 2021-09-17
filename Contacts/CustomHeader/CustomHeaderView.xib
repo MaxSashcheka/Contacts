@@ -19,42 +19,41 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsZ-kq-4qp">
                             <rect key="frame" x="286" y="7" width="118" height="36"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="118" id="CeM-sV-OQ6"/>
                                 <constraint firstAttribute="height" constant="36" id="TKi-op-8E3"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <state key="normal" title="Close section">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="closeSectionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="UI8-M4-4Vf"/>
+                                <action selector="closeExpandSectionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="UI8-M4-4Vf"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osY-b9-zwO">
                             <rect key="frame" x="158" y="7" width="118" height="36"/>
-                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="118" id="ZA0-mM-a1w"/>
                                 <constraint firstAttribute="height" constant="36" id="e4M-9v-Agd"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <state key="normal" title="New contact">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="newContactButtontapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="JqN-4A-FBM"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-Gj-8im">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-Gj-8im">
                             <rect key="frame" x="5" y="7" width="143" height="36"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="TQB-Gj-8im" firstAttribute="leading" secondItem="pSV-ca-Ze3" secondAttribute="leading" constant="5" id="2ez-Nb-XaX"/>
                         <constraint firstItem="TQB-Gj-8im" firstAttribute="top" secondItem="pSV-ca-Ze3" secondAttribute="top" constant="7" id="T4Q-o7-0Hd"/>
@@ -79,7 +78,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="deleteButtonContact" destination="IsZ-kq-4qp" id="GLG-IG-hoG"/>
+                <outlet property="closeExpandButton" destination="IsZ-kq-4qp" id="GLG-IG-hoG"/>
                 <outlet property="newContactButton" destination="osY-b9-zwO" id="2J4-eB-4XI"/>
                 <outlet property="sectionNameLabel" destination="TQB-Gj-8im" id="KoA-15-GVL"/>
             </connections>

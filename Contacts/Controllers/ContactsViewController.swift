@@ -31,6 +31,7 @@ class ContactsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         let contactNib = UINib(nibName: "ContactCell", bundle: nil)
         tableView.register(contactNib, forCellReuseIdentifier: ContactCellClass.reuseIdentifier)
         let headerNib = UINib(nibName: "CustomHeaderView", bundle: nil)
@@ -43,20 +44,22 @@ class ContactsViewController: UIViewController {
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let popup = PopUp()
+        view.addSubview(popup)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if !contactsDataSource[indexPath.section].isExpanded {
-            return 0
-        }
-        return 90
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeaderViewClass.reuseIdentifier) as? CustomHeaderViewClass else { return UIView()}
-        headerView.configureWith(section: section, delegate: self)
+        headerView.configureWith(section: section, delegate: self, sectionName: contactsDataSource[section].sectionName)
         
         return headerView
     }
@@ -66,6 +69,10 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if !contactsDataSource[section].isExpanded {
+            return 0
+        }
         return contactsDataSource[section].contacts.count
     }
     
@@ -81,10 +88,39 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ContactsViewController: CustomHeaderViewClassDelegate {
     func toggleSectionVisibility(forSection section: Int) {
-        contactsDataSource[section].isExpanded = !contactsDataSource[section].isExpanded
+        
+        let isSectionExpanded = contactsDataSource[section].isExpanded
+        contactsDataSource[section].isExpanded = !isSectionExpanded
+
+        var indexPathsToReload = [IndexPath]()
+        for row in contactsDataSource[section].contacts.indices {
+            let indexPath = IndexPath(row: row, section: section)
+            indexPathsToReload.append(indexPath)
+        }
+        
         tableView.beginUpdates()
-        tableView.reloadSections([section], with: .automatic)
+        if isSectionExpanded {
+            tableView.deleteRows(at: indexPathsToReload, with: .fade)
+        } else {
+            tableView.insertRows(at: indexPathsToReload, with: .fade)
+        }
         tableView.endUpdates()
+        
+//        tableView.beginUpdates()
+//        tableView.reloadSections([section], with: .automatic)  <- Плохой вариант
+//        tableView.endUpdates()
     }
+    
+    func createNewContact(forSection section: Int) {
+        contactsDataSource[section].createNewContact()
+        
+        let indexPathToInsert = IndexPath(row: 0, section: section)
+        tableView.beginUpdates()
+        tableView.insertRows(at: [indexPathToInsert], with: .fade)
+        tableView.endUpdates()
+        
+        
+    }
+
     
 }

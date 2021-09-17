@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD53336226F49E4E001DBA9A /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53336126F49E4E001DBA9A /* Popup.swift */; };
+		DD53C92326F3F019000045A7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92226F3F019000045A7 /* Helpers.swift */; };
+		DD53C92626F3F071000045A7 /* HeaderViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92526F3F071000045A7 /* HeaderViewButton.swift */; };
 		DD53F5B826F34A1C00947C53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5B726F34A1C00947C53 /* AppDelegate.swift */; };
 		DD53F5BA26F34A1C00947C53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */; };
 		DD53F5BF26F34A1C00947C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD53F5BD26F34A1C00947C53 /* Main.storyboard */; };
@@ -15,12 +18,15 @@
 		DD53F5D126F34D1900947C53 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5D026F34D1900947C53 /* ContactsViewController.swift */; };
 		DD53F5D526F3501800947C53 /* ContactCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5D326F3501800947C53 /* ContactCellClass.swift */; };
 		DD53F5D626F3501800947C53 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53F5D426F3501800947C53 /* ContactCell.xib */; };
-		DD53F5DB26F3525400947C53 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5DA26F3525400947C53 /* Contact.swift */; };
+		DD53F5DB26F3525400947C53 /* ContactsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5DA26F3525400947C53 /* ContactsGroup.swift */; };
 		DD53F5E026F35A4C00947C53 /* CustomHeaderViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5DF26F35A4C00947C53 /* CustomHeaderViewClass.swift */; };
 		DD53F5E426F35A6300947C53 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53F5E326F35A6300947C53 /* CustomHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD53336126F49E4E001DBA9A /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		DD53C92226F3F019000045A7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		DD53C92526F3F071000045A7 /* HeaderViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewButton.swift; sourceTree = "<group>"; };
 		DD53F5B426F34A1C00947C53 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD53F5B726F34A1C00947C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +37,7 @@
 		DD53F5D026F34D1900947C53 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		DD53F5D326F3501800947C53 /* ContactCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellClass.swift; sourceTree = "<group>"; };
 		DD53F5D426F3501800947C53 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
-		DD53F5DA26F3525400947C53 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		DD53F5DA26F3525400947C53 /* ContactsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsGroup.swift; sourceTree = "<group>"; };
 		DD53F5DF26F35A4C00947C53 /* CustomHeaderViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderViewClass.swift; sourceTree = "<group>"; };
 		DD53F5E326F35A6300947C53 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +53,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD53C92126F3F008000045A7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DD53C92226F3F019000045A7 /* Helpers.swift */,
+				DD53C92526F3F071000045A7 /* HeaderViewButton.swift */,
+				DD53336126F49E4E001DBA9A /* Popup.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DD53C94D26F3FDB1000045A7 /* ApplicationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DD53F5B726F34A1C00947C53 /* AppDelegate.swift */,
+				DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */,
+				DD53F5C226F34A1D00947C53 /* LaunchScreen.storyboard */,
+				DD53F5BD26F34A1C00947C53 /* Main.storyboard */,
+			);
+			path = ApplicationFiles;
+			sourceTree = "<group>";
+		};
 		DD53F5AB26F34A1C00947C53 = {
 			isa = PBXGroup;
 			children = (
@@ -66,15 +93,13 @@
 		DD53F5B626F34A1C00947C53 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				DD53C94D26F3FDB1000045A7 /* ApplicationFiles */,
+				DD53C92126F3F008000045A7 /* Utilities */,
 				DD53F5CD26F34C0300947C53 /* CustomTableViewCells */,
 				DD53F5CE26F34C1100947C53 /* CustomHeader */,
 				DD53F5D926F3524E00947C53 /* Model */,
 				DD53F5CC26F34BFA00947C53 /* Controllers */,
-				DD53F5B726F34A1C00947C53 /* AppDelegate.swift */,
-				DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */,
-				DD53F5BD26F34A1C00947C53 /* Main.storyboard */,
 				DD53F5C026F34A1D00947C53 /* Assets.xcassets */,
-				DD53F5C226F34A1D00947C53 /* LaunchScreen.storyboard */,
 				DD53F5C526F34A1D00947C53 /* Info.plist */,
 			);
 			path = Contacts;
@@ -109,7 +134,7 @@
 		DD53F5D926F3524E00947C53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DD53F5DA26F3525400947C53 /* Contact.swift */,
+				DD53F5DA26F3525400947C53 /* ContactsGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,10 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD53336226F49E4E001DBA9A /* Popup.swift in Sources */,
 				DD53F5D526F3501800947C53 /* ContactCellClass.swift in Sources */,
+				DD53C92626F3F071000045A7 /* HeaderViewButton.swift in Sources */,
+				DD53C92326F3F019000045A7 /* Helpers.swift in Sources */,
 				DD53F5E026F35A4C00947C53 /* CustomHeaderViewClass.swift in Sources */,
 				DD53F5B826F34A1C00947C53 /* AppDelegate.swift in Sources */,
-				DD53F5DB26F3525400947C53 /* Contact.swift in Sources */,
+				DD53F5DB26F3525400947C53 /* ContactsGroup.swift in Sources */,
 				DD53F5BA26F34A1C00947C53 /* SceneDelegate.swift in Sources */,
 				DD53F5D126F34D1900947C53 /* ContactsViewController.swift in Sources */,
 			);
