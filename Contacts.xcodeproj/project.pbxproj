@@ -12,8 +12,11 @@
 		DD53336A26F4A110001DBA9A /* DetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53336926F4A110001DBA9A /* DetailInfoView.xib */; };
 		DD5333BC26F4B21A001DBA9A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD5333BA26F4B21A001DBA9A /* Montserrat-Medium.ttf */; };
 		DD5333BD26F4B21A001DBA9A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD5333BB26F4B21A001DBA9A /* Montserrat-Regular.ttf */; };
+		DD5333C226F4C5D5001DBA9A /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5333C126F4C5D5001DBA9A /* CustomNavigationButton.swift */; };
+		DD5333C826F4D5D6001DBA9A /* SBCardPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5333C726F4D5D6001DBA9A /* SBCardPopupViewController.swift */; };
+		DD5333CB26F4D61D001DBA9A /* AddUserPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5333CA26F4D61D001DBA9A /* AddUserPopUpViewController.swift */; };
 		DD53C92326F3F019000045A7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92226F3F019000045A7 /* Helpers.swift */; };
-		DD53C92626F3F071000045A7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92526F3F071000045A7 /* CustomButton.swift */; };
+		DD53C92626F3F071000045A7 /* CustomHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92526F3F071000045A7 /* CustomHeaderButton.swift */; };
 		DD53F5B826F34A1C00947C53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5B726F34A1C00947C53 /* AppDelegate.swift */; };
 		DD53F5BA26F34A1C00947C53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */; };
 		DD53F5BF26F34A1C00947C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD53F5BD26F34A1C00947C53 /* Main.storyboard */; };
@@ -33,8 +36,11 @@
 		DD53336926F4A110001DBA9A /* DetailInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoView.xib; sourceTree = "<group>"; };
 		DD5333BA26F4B21A001DBA9A /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		DD5333BB26F4B21A001DBA9A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		DD5333C126F4C5D5001DBA9A /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
+		DD5333C726F4D5D6001DBA9A /* SBCardPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBCardPopupViewController.swift; sourceTree = "<group>"; };
+		DD5333CA26F4D61D001DBA9A /* AddUserPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserPopUpViewController.swift; sourceTree = "<group>"; };
 		DD53C92226F3F019000045A7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		DD53C92526F3F071000045A7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DD53C92526F3F071000045A7 /* CustomHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderButton.swift; sourceTree = "<group>"; };
 		DD53F5B426F34A1C00947C53 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD53F5B726F34A1C00947C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 		DD53336426F4A0C2001DBA9A /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DD53C92526F3F071000045A7 /* CustomHeaderButton.swift */,
+				DD5333C126F4C5D5001DBA9A /* CustomNavigationButton.swift */,
 				DD53336526F4A103001DBA9A /* DetailInfoView.swift */,
 				DD53336926F4A110001DBA9A /* DetailInfoView.xib */,
 			);
@@ -83,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				DD53C92226F3F019000045A7 /* Helpers.swift */,
-				DD53C92526F3F071000045A7 /* CustomButton.swift */,
 				DD53336126F49E4E001DBA9A /* Popup.swift */,
 			);
 			path = Utilities;
@@ -137,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				DD53F5D026F34D1900947C53 /* ContactsViewController.swift */,
+				DD5333C726F4D5D6001DBA9A /* SBCardPopupViewController.swift */,
+				DD5333CA26F4D61D001DBA9A /* AddUserPopUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,11 +253,14 @@
 			files = (
 				DD53336226F49E4E001DBA9A /* Popup.swift in Sources */,
 				DD53F5D526F3501800947C53 /* ContactCellClass.swift in Sources */,
-				DD53C92626F3F071000045A7 /* CustomButton.swift in Sources */,
+				DD53C92626F3F071000045A7 /* CustomHeaderButton.swift in Sources */,
 				DD53C92326F3F019000045A7 /* Helpers.swift in Sources */,
+				DD5333C826F4D5D6001DBA9A /* SBCardPopupViewController.swift in Sources */,
 				DD53F5E026F35A4C00947C53 /* CustomHeaderViewClass.swift in Sources */,
 				DD53F5B826F34A1C00947C53 /* AppDelegate.swift in Sources */,
 				DD53F5DB26F3525400947C53 /* ContactsGroup.swift in Sources */,
+				DD5333CB26F4D61D001DBA9A /* AddUserPopUpViewController.swift in Sources */,
+				DD5333C226F4C5D5001DBA9A /* CustomNavigationButton.swift in Sources */,
 				DD53336626F4A103001DBA9A /* DetailInfoView.swift in Sources */,
 				DD53F5BA26F34A1C00947C53 /* SceneDelegate.swift in Sources */,
 				DD53F5D126F34D1900947C53 /* ContactsViewController.swift in Sources */,

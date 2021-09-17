@@ -9,24 +9,14 @@ import UIKit
 
 class ContactsViewController: UIViewController {
 
-    var contactsDataSource = [
-        ContactsGroup(withNumberOfContacts: 3),
-        ContactsGroup(withNumberOfContacts: 4),
-        ContactsGroup(withNumberOfContacts: 2),
+    var contactsDataSource = [ContactsGroup]()
 
-    ]
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Contacts"
-        let textAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.black
-        ]
-        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+        navigationBarSetup()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,13 +27,54 @@ class ContactsViewController: UIViewController {
         let headerNib = UINib(nibName: "CustomHeaderView", bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: CustomHeaderViewClass.reuseIdentifier)
     }
+    
+    private func navigationBarSetup() {
+        title = "Contacts"
+        
+        let largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold),
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ]
+        
+        let titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .semibold),
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ]
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = largeTitleTextAttributes
+        navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
+        
+        let addNewSectionButton = CustomNavigationButton(withColor: .orange)
+        addNewSectionButton.frame = CGRect(x: 0, y: 0, width: 118, height: 34)
+        addNewSectionButton.setTitle("New section", for: .normal)
+        addNewSectionButton.addTarget(self, action: #selector(addNewSectionButtonHandler), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addNewSectionButton)
+    }
+    
+    @objc private func addNewSectionButtonHandler() {
+        
+        let newSectionIndex = contactsDataSource.count
+        contactsDataSource.insert(ContactsGroup(withNumberOfContacts: 0), at: newSectionIndex)
+        
+        let section = IndexSet(integer: newSectionIndex)
+        
+        tableView.beginUpdates()
+        tableView.insertSections(section, with: .left)
+        tableView.endUpdates()
+    }
 
 }
 
+//MARK: UITableViewDelegate and UITableViewDataSource
+
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let popup = AddUserPopUpViewController.create()
+        let sbPopup = SBCardPopupViewController(contentViewController: popup)
+        sbPopup.cornerRadius = 20
+        sbPopup.show(onViewController: self)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -79,10 +110,13 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: CustomHeaderViewClassDelegate
+
 extension ContactsViewController: CustomHeaderViewClassDelegate {
     func toggleSectionVisibility(forSection section: Int) {
         
         let isSectionExpanded = contactsDataSource[section].isExpanded
+
         contactsDataSource[section].isExpanded = !isSectionExpanded
 
         var indexPathsToReload = [IndexPath]()
@@ -105,15 +139,15 @@ extension ContactsViewController: CustomHeaderViewClassDelegate {
     }
     
     func createNewContact(forSection section: Int) {
+        if !contactsDataSource[section].isExpanded {
+            return
+        }
         contactsDataSource[section].createNewContact()
         
         let indexPathToInsert = IndexPath(row: 0, section: section)
         tableView.beginUpdates()
-        tableView.insertRows(at: [indexPathToInsert], with: .fade)
+        tableView.insertRows(at: [indexPathToInsert], with: (contactsDataSource[section].contacts.count % 2 == 1) ? .left : .right)
         tableView.endUpdates()
         
-        
     }
-
-    
 }

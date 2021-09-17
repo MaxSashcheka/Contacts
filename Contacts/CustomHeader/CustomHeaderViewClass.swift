@@ -25,21 +25,10 @@ class CustomHeaderViewClass: UITableViewHeaderFooterView {
     
     var isExpanded = true
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        newContactButton.layer.cornerRadius = newContactButton.bounds.height / 4
-        closeExpandButton.layer.cornerRadius = closeExpandButton.bounds.height / 4
-//        newContactButton.setup()
-//        closeExpandButton.setup()
-
-    }
-    
     @IBAction func newContactButtontapped(_ sender: Any) {
         delegate.createNewContact(forSection: currentSection)
     }
 
-    
     @IBAction func closeExpandSectionButtonTapped(_ sender: UIButton) {
         isExpanded = !isExpanded
         if isExpanded {
@@ -49,7 +38,6 @@ class CustomHeaderViewClass: UITableViewHeaderFooterView {
         }
         delegate.toggleSectionVisibility(forSection: currentSection)
     }
-    
     
     func configureWith(section: Int, delegate: CustomHeaderViewClassDelegate, sectionName: String) {
         self.currentSection = section

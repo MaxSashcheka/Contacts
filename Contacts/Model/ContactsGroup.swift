@@ -50,7 +50,7 @@ struct ContactsGroup {
         }
         
         private let names = [
-            "Max Sashcheka", "Artem Malashkevich", "Denis Skuarat", "Artem Martsev", "Anna Kamenkova",
+            "Max Sashcheka", "Artem Malashkevich", "Denis Skurat", "Artem Martsev", "Anna Kamenkova",
             "Ruslan Deminsky", "Gleb King", "Dmitri Kapchan", "Roman Pinchuk", "Natalia Morozova",
             "Angelina Borzdakova", "Evgeni Leshenko", "Nikita Gurski"
         ]

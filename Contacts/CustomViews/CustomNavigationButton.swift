@@ -1,5 +1,5 @@
 //
-//  HeaderViewButton.swift
+//  CustomNavigationButton.swift
 //  Contacts
 //
 //  Created by Max Sashcheka on 9/17/21.
@@ -7,23 +7,27 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+class CustomNavigationButton: UIButton {
     
-    init() {
+    var themeColor: UIColor!
+    
+    init(withColor color: UIColor) {
         super.init(frame: .zero)
+        themeColor = color
         setup()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        themeColor = .blue
         setup()
     }
     
     func setup() {
-        setTitleColor(.lightGreenSea, for: .normal)
+        setTitleColor(themeColor, for: .normal)
         backgroundColor = .white
         layer.shadowColor = UIColor.quarterBlack.cgColor
-        layer.shadowRadius = 1
+        layer.shadowRadius = 3
         layer.shadowOpacity = 1.0
         layer.shadowOffset = .zero
 
@@ -38,10 +42,10 @@ class CustomButton: UIButton {
         didSet {
             UIView.transition(with: self, duration: 0.2, options: [.transitionCrossDissolve]) { [self] in
                 if isHighlighted {
-                    layer.shadowRadius = 2.0
-                    layer.shadowColor = UIColor.lightGreenSea.cgColor
+                    layer.shadowRadius = 4.0
+                    layer.shadowColor = themeColor.cgColor
                 } else {
-                    layer.shadowRadius = 1.0
+                    layer.shadowRadius = 3.0
                     layer.shadowColor = UIColor.quarterBlack.cgColor
                 }
             }
