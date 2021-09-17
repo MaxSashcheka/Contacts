@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DD53336226F49E4E001DBA9A /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53336126F49E4E001DBA9A /* Popup.swift */; };
+		DD53336626F4A103001DBA9A /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53336526F4A103001DBA9A /* DetailInfoView.swift */; };
+		DD53336A26F4A110001DBA9A /* DetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53336926F4A110001DBA9A /* DetailInfoView.xib */; };
+		DD5333BC26F4B21A001DBA9A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD5333BA26F4B21A001DBA9A /* Montserrat-Medium.ttf */; };
+		DD5333BD26F4B21A001DBA9A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD5333BB26F4B21A001DBA9A /* Montserrat-Regular.ttf */; };
 		DD53C92326F3F019000045A7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92226F3F019000045A7 /* Helpers.swift */; };
-		DD53C92626F3F071000045A7 /* HeaderViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92526F3F071000045A7 /* HeaderViewButton.swift */; };
+		DD53C92626F3F071000045A7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53C92526F3F071000045A7 /* CustomButton.swift */; };
 		DD53F5B826F34A1C00947C53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5B726F34A1C00947C53 /* AppDelegate.swift */; };
 		DD53F5BA26F34A1C00947C53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */; };
 		DD53F5BF26F34A1C00947C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD53F5BD26F34A1C00947C53 /* Main.storyboard */; };
@@ -25,8 +29,12 @@
 
 /* Begin PBXFileReference section */
 		DD53336126F49E4E001DBA9A /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		DD53336526F4A103001DBA9A /* DetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
+		DD53336926F4A110001DBA9A /* DetailInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoView.xib; sourceTree = "<group>"; };
+		DD5333BA26F4B21A001DBA9A /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		DD5333BB26F4B21A001DBA9A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		DD53C92226F3F019000045A7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		DD53C92526F3F071000045A7 /* HeaderViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewButton.swift; sourceTree = "<group>"; };
+		DD53C92526F3F071000045A7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DD53F5B426F34A1C00947C53 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD53F5B726F34A1C00947C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,11 +61,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD53336426F4A0C2001DBA9A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DD53336526F4A103001DBA9A /* DetailInfoView.swift */,
+				DD53336926F4A110001DBA9A /* DetailInfoView.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		DD5333B926F4B209001DBA9A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DD5333BA26F4B21A001DBA9A /* Montserrat-Medium.ttf */,
+				DD5333BB26F4B21A001DBA9A /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		DD53C92126F3F008000045A7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				DD53C92226F3F019000045A7 /* Helpers.swift */,
-				DD53C92526F3F071000045A7 /* HeaderViewButton.swift */,
+				DD53C92526F3F071000045A7 /* CustomButton.swift */,
 				DD53336126F49E4E001DBA9A /* Popup.swift */,
 			);
 			path = Utilities;
@@ -66,6 +92,7 @@
 		DD53C94D26F3FDB1000045A7 /* ApplicationFiles */ = {
 			isa = PBXGroup;
 			children = (
+				DD5333B926F4B209001DBA9A /* Fonts */,
 				DD53F5B726F34A1C00947C53 /* AppDelegate.swift */,
 				DD53F5B926F34A1C00947C53 /* SceneDelegate.swift */,
 				DD53F5C226F34A1D00947C53 /* LaunchScreen.storyboard */,
@@ -93,12 +120,13 @@
 		DD53F5B626F34A1C00947C53 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				DD53C94D26F3FDB1000045A7 /* ApplicationFiles */,
-				DD53C92126F3F008000045A7 /* Utilities */,
+				DD53F5CC26F34BFA00947C53 /* Controllers */,
+				DD53F5D926F3524E00947C53 /* Model */,
 				DD53F5CD26F34C0300947C53 /* CustomTableViewCells */,
 				DD53F5CE26F34C1100947C53 /* CustomHeader */,
-				DD53F5D926F3524E00947C53 /* Model */,
-				DD53F5CC26F34BFA00947C53 /* Controllers */,
+				DD53C92126F3F008000045A7 /* Utilities */,
+				DD53336426F4A0C2001DBA9A /* CustomViews */,
+				DD53C94D26F3FDB1000045A7 /* ApplicationFiles */,
 				DD53F5C026F34A1D00947C53 /* Assets.xcassets */,
 				DD53F5C526F34A1D00947C53 /* Info.plist */,
 			);
@@ -196,8 +224,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5333BD26F4B21A001DBA9A /* Montserrat-Regular.ttf in Resources */,
 				DD53F5E426F35A6300947C53 /* CustomHeaderView.xib in Resources */,
+				DD53336A26F4A110001DBA9A /* DetailInfoView.xib in Resources */,
 				DD53F5D626F3501800947C53 /* ContactCell.xib in Resources */,
+				DD5333BC26F4B21A001DBA9A /* Montserrat-Medium.ttf in Resources */,
 				DD53F5C426F34A1D00947C53 /* LaunchScreen.storyboard in Resources */,
 				DD53F5C126F34A1D00947C53 /* Assets.xcassets in Resources */,
 				DD53F5BF26F34A1C00947C53 /* Main.storyboard in Resources */,
@@ -213,11 +244,12 @@
 			files = (
 				DD53336226F49E4E001DBA9A /* Popup.swift in Sources */,
 				DD53F5D526F3501800947C53 /* ContactCellClass.swift in Sources */,
-				DD53C92626F3F071000045A7 /* HeaderViewButton.swift in Sources */,
+				DD53C92626F3F071000045A7 /* CustomButton.swift in Sources */,
 				DD53C92326F3F019000045A7 /* Helpers.swift in Sources */,
 				DD53F5E026F35A4C00947C53 /* CustomHeaderViewClass.swift in Sources */,
 				DD53F5B826F34A1C00947C53 /* AppDelegate.swift in Sources */,
 				DD53F5DB26F3525400947C53 /* ContactsGroup.swift in Sources */,
+				DD53336626F4A103001DBA9A /* DetailInfoView.swift in Sources */,
 				DD53F5BA26F34A1C00947C53 /* SceneDelegate.swift in Sources */,
 				DD53F5D126F34D1900947C53 /* ContactsViewController.swift in Sources */,
 			);

@@ -17,7 +17,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSV-ca-Ze3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsZ-kq-4qp">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsZ-kq-4qp" customClass="CustomButton" customModule="Contacts" customModuleProvider="target">
                             <rect key="frame" x="286" y="7" width="118" height="36"/>
                             <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -32,16 +32,15 @@
                                 <action selector="closeExpandSectionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="UI8-M4-4Vf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osY-b9-zwO">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osY-b9-zwO" customClass="CustomButton" customModule="Contacts" customModuleProvider="target">
                             <rect key="frame" x="158" y="7" width="118" height="36"/>
-                            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="118" id="ZA0-mM-a1w"/>
                                 <constraint firstAttribute="height" constant="36" id="e4M-9v-Agd"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="New contact">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" systemColor="labelColor"/>
                             </state>
                             <connections>
                                 <action selector="newContactButtontapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="JqN-4A-FBM"/>
@@ -86,6 +85,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -37,17 +37,10 @@ class ContactsViewController: UIViewController {
         let headerNib = UINib(nibName: "CustomHeaderView", bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: CustomHeaderViewClass.reuseIdentifier)
     }
-    
-
 
 }
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let popup = PopUp()
-        view.addSubview(popup)
-    }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0

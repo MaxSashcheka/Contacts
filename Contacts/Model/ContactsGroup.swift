@@ -29,7 +29,7 @@ struct ContactsGroup {
     }
     
     private let sectionNames = [
-        "Friends", "Best frietds", "Classmates", "Groupmates"
+        "Friends", "Best friends", "Classmates", "Groupmates", "Old friends", "New friends"
     ]
     
     struct Contact {

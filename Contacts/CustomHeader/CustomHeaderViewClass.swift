@@ -30,8 +30,8 @@ class CustomHeaderViewClass: UITableViewHeaderFooterView {
         
         newContactButton.layer.cornerRadius = newContactButton.bounds.height / 4
         closeExpandButton.layer.cornerRadius = closeExpandButton.bounds.height / 4
-        newContactButton.setup()
-        closeExpandButton.setup()
+//        newContactButton.setup()
+//        closeExpandButton.setup()
 
     }
     

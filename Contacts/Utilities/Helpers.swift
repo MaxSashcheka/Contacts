@@ -13,4 +13,13 @@ extension UIColor {
     static let quarterBlack: UIColor = UIColor(red: .zero, green: .zero, blue: .zero, alpha: 0.25)
 }
 
-
+extension UIFont {
+    enum Prettiness: String {
+        case regular
+        case medium
+    }
+    
+    static func montserrat(_ size: CGFloat, _ type: Prettiness) -> UIFont {
+        UIFont(name: "Montserrat-\(type.rawValue.capitalized)", size: size) ?? .systemFont(ofSize: size)
+    }
+}
