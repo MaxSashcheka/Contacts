@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD53336226F49E4E001DBA9A /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53336126F49E4E001DBA9A /* Popup.swift */; };
-		DD53336626F4A103001DBA9A /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53336526F4A103001DBA9A /* DetailInfoView.swift */; };
-		DD53336A26F4A110001DBA9A /* DetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53336926F4A110001DBA9A /* DetailInfoView.xib */; };
 		DD5333BC26F4B21A001DBA9A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD5333BA26F4B21A001DBA9A /* Montserrat-Medium.ttf */; };
 		DD5333BD26F4B21A001DBA9A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD5333BB26F4B21A001DBA9A /* Montserrat-Regular.ttf */; };
 		DD5333C226F4C5D5001DBA9A /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5333C126F4C5D5001DBA9A /* CustomNavigationButton.swift */; };
@@ -31,9 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD53336126F49E4E001DBA9A /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
-		DD53336526F4A103001DBA9A /* DetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
-		DD53336926F4A110001DBA9A /* DetailInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoView.xib; sourceTree = "<group>"; };
 		DD5333BA26F4B21A001DBA9A /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		DD5333BB26F4B21A001DBA9A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		DD5333C126F4C5D5001DBA9A /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
@@ -72,8 +66,6 @@
 			children = (
 				DD53C92526F3F071000045A7 /* CustomHeaderButton.swift */,
 				DD5333C126F4C5D5001DBA9A /* CustomNavigationButton.swift */,
-				DD53336526F4A103001DBA9A /* DetailInfoView.swift */,
-				DD53336926F4A110001DBA9A /* DetailInfoView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -91,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				DD53C92226F3F019000045A7 /* Helpers.swift */,
-				DD53336126F49E4E001DBA9A /* Popup.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -144,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				DD53F5D026F34D1900947C53 /* ContactsViewController.swift */,
-				DD5333C726F4D5D6001DBA9A /* SBCardPopupViewController.swift */,
 				DD5333CA26F4D61D001DBA9A /* AddUserPopUpViewController.swift */,
+				DD5333C726F4D5D6001DBA9A /* SBCardPopupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,7 +226,6 @@
 			files = (
 				DD5333BD26F4B21A001DBA9A /* Montserrat-Regular.ttf in Resources */,
 				DD53F5E426F35A6300947C53 /* CustomHeaderView.xib in Resources */,
-				DD53336A26F4A110001DBA9A /* DetailInfoView.xib in Resources */,
 				DD53F5D626F3501800947C53 /* ContactCell.xib in Resources */,
 				DD5333BC26F4B21A001DBA9A /* Montserrat-Medium.ttf in Resources */,
 				DD53F5C426F34A1D00947C53 /* LaunchScreen.storyboard in Resources */,
@@ -251,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD53336226F49E4E001DBA9A /* Popup.swift in Sources */,
 				DD53F5D526F3501800947C53 /* ContactCellClass.swift in Sources */,
 				DD53C92626F3F071000045A7 /* CustomHeaderButton.swift in Sources */,
 				DD53C92326F3F019000045A7 /* Helpers.swift in Sources */,
@@ -261,7 +250,6 @@
 				DD53F5DB26F3525400947C53 /* ContactsGroup.swift in Sources */,
 				DD5333CB26F4D61D001DBA9A /* AddUserPopUpViewController.swift in Sources */,
 				DD5333C226F4C5D5001DBA9A /* CustomNavigationButton.swift in Sources */,
-				DD53336626F4A103001DBA9A /* DetailInfoView.swift in Sources */,
 				DD53F5BA26F34A1C00947C53 /* SceneDelegate.swift in Sources */,
 				DD53F5D126F34D1900947C53 /* ContactsViewController.swift in Sources */,
 			);

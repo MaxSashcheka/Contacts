@@ -23,9 +23,8 @@ struct ContactsGroup {
         
     }
     
-    mutating func createNewContact() {
-        let newContact = Contact()
-        contacts.insert(newContact, at: 0)
+    static func createNewContact() -> Contact {
+        return Contact()
     }
     
     private let sectionNames = [

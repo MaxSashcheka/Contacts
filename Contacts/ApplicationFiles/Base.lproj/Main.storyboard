@@ -73,7 +73,7 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtQ-ZR-inB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter contact message:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtQ-ZR-inB">
                                 <rect key="frame" x="20" y="135" width="374" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="hRz-Oe-fOc"/>
@@ -106,6 +106,9 @@
                                     <constraint firstAttribute="width" constant="138" id="TGV-qy-UMZ"/>
                                 </constraints>
                                 <state key="normal" title="Save contact"/>
+                                <connections>
+                                    <action selector="saveContact:" destination="RX7-kx-qkb" eventType="touchUpInside" id="mRq-c4-akj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bcQ-7F-XOw"/>
@@ -136,6 +139,14 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="300"/>
+                    <connections>
+                        <outlet property="contactMessageTextField" destination="VXN-dI-YWI" id="pfO-NV-6GP"/>
+                        <outlet property="contactNameTextField" destination="c1e-LD-Y7j" id="fbo-Kc-5I8"/>
+                        <outlet property="enterContactLabel" destination="1mE-n0-Ryw" id="Rs5-62-D7H"/>
+                        <outlet property="enterContactMessageLabel" destination="HtQ-ZR-inB" id="CTT-An-is6"/>
+                        <outlet property="genderSegmentedControl" destination="jqc-LZ-yJ0" id="Ei7-6k-c3t"/>
+                        <outlet property="saveContactButton" destination="Lnd-7Z-dXS" id="P0A-3w-oTz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CX-vP-hMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

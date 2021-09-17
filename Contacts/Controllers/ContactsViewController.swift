@@ -9,7 +9,11 @@ import UIKit
 
 class ContactsViewController: UIViewController {
 
-    var contactsDataSource = [ContactsGroup]()
+    var contactsDataSource = [
+        ContactsGroup(withNumberOfContacts: 2),
+        ContactsGroup(withNumberOfContacts: 2),
+        
+    ]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -70,12 +74,9 @@ class ContactsViewController: UIViewController {
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let popup = AddUserPopUpViewController.create()
-        let sbPopup = SBCardPopupViewController(contentViewController: popup)
-        sbPopup.cornerRadius = 20
-        sbPopup.show(onViewController: self)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
@@ -142,12 +143,25 @@ extension ContactsViewController: CustomHeaderViewClassDelegate {
         if !contactsDataSource[section].isExpanded {
             return
         }
-        contactsDataSource[section].createNewContact()
+//        contactsDataSource[section].createNewContact()
+        
+        let popup = AddUserPopUpViewController.create(forSection: section, withDelegate: self)
+        let sbPopup = SBCardPopupViewController(contentViewController: popup)
+        sbPopup.cornerRadius = 20
+        sbPopup.show(onViewController: self)
+        
+    }
+}
+
+extension ContactsViewController: AddUserPopUpViewControllerDelegate {
+    func saveNewContact(contact: ContactsGroup.Contact, forSection section: Int) {
+        contactsDataSource[section].contacts.insert(contact, at: 0)
         
         let indexPathToInsert = IndexPath(row: 0, section: section)
         tableView.beginUpdates()
         tableView.insertRows(at: [indexPathToInsert], with: (contactsDataSource[section].contacts.count % 2 == 1) ? .left : .right)
         tableView.endUpdates()
-        
     }
+    
+    
 }
