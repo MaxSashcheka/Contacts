@@ -20,7 +20,6 @@ struct ContactsGroup {
         
         let randomSectionNameIndex = Int.random(in: 0..<sectionNames.count)
         sectionName = sectionNames[randomSectionNameIndex]
-        
     }
     
     static func createNewContact() -> Contact {
@@ -36,22 +35,51 @@ struct ContactsGroup {
         var image: UIImage
         var contactName: String
         var contactDetailInfo: String
+        var gender: Gender
         
+        var maleImages = [UIImage]()
+        var femaleImages = [UIImage]()
+        
+        mutating func updateImage() {
+            if gender == .male {
+                image = maleImages.randomElement()!
+            } else {
+                image = femaleImages.randomElement()!
+            }
+        }
+              
         init() {
-            let randomImageIndex = Int.random(in: 0..<16)
-            image = UIImage(named: "image\(randomImageIndex)")!
-        
-            let randomContactNameIndex = Int.random(in: 0..<names.count)
-            contactName = names[randomContactNameIndex]
+            for index in 0..<14 {
+                let image = UIImage(named: "image\(index)")!
+                maleImages.append(image)
+            }
+            for index in 14..<27 {
+                let image = UIImage(named: "image\(index)")!
+                femaleImages.append(image)
+            }
             
-            let randomDeatilInfoIndex = Int.random(in: 0..<detailInfo.count)
-            contactDetailInfo = detailInfo[randomDeatilInfoIndex]
+            let randomGenderIndex = Int.random(in: 0...1)
+            gender = (randomGenderIndex == 0) ? .male : .female
+            
+            if gender == .male {
+                image = maleImages.randomElement()!
+                contactName = maleNames.randomElement()!
+                contactDetailInfo = detailInfo.randomElement()!
+            } else {
+                image = femaleImages.randomElement()!
+                contactName = femaleNames.randomElement()!
+                contactDetailInfo = detailInfo.randomElement()!
+            }
         }
         
-        private let names = [
-            "Max Sashcheka", "Artem Malashkevich", "Denis Skurat", "Artem Martsev", "Anna Kamenkova",
-            "Ruslan Deminsky", "Gleb King", "Dmitri Kapchan", "Roman Pinchuk", "Natalia Morozova",
-            "Angelina Borzdakova", "Evgeni Leshenko", "Nikita Gurski"
+        private let maleNames = [
+            "Max Sashcheka", "Artem Malashkevich", "Denis Skurat", "Artem Martsev",
+            "Ruslan Deminsky", "Gleb King", "Dmitri Kapchan", "Roman Pinchuk", "Evgeni Leshenko", "Nikita Gurski"
+        ]
+        
+        private let femaleNames = [
+            "Anna Kamenkova", "Natalia Morozova", "Angelina Borzdakova", "Natalie Sashcheka",
+            "Nastya Tarasova", "Victoria Sobol", "Kristina Dashkevich", "Ula Shumila", "Katya Shupenik"
         ]
         
         private let detailInfo = [
@@ -59,6 +87,11 @@ struct ContactsGroup {
             "volutpat consequat", "mauris nunc congue","Sit amet consectetur","adipiscing elit ut",
             "Sed tempus urna et","pharetra pharetra massa"
         ]
+        
+        enum Gender {
+            case male
+            case female
+        }
     }
 
 }

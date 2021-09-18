@@ -15,8 +15,8 @@ class AddUserPopUpViewController: UIViewController, SBCardPopupContent {
     
     
     var popupDismisser: SBCardPopupDismisser?
-    var allowsTapToDismissPopupCard = true
-    var allowsSwipeToDismissPopupCard = true
+    var allowsTapToDismissPopupCard = false
+    var allowsSwipeToDismissPopupCard = false
     
     var currentSection: Int!
     var delegate: AddUserPopUpViewControllerDelegate!
@@ -55,10 +55,14 @@ class AddUserPopUpViewController: UIViewController, SBCardPopupContent {
     
     
     @IBAction func saveContact(_ sender: Any) {
+        
         var contact = ContactsGroup.createNewContact()
         
         contact.contactName = contactNameTextField.text ?? "No name"
         contact.contactDetailInfo = contactMessageTextField.text ?? "No message"
+        
+        contact.gender = genderSegmentedControl.selectedSegmentIndex == 0 ? .male : .female
+        contact.updateImage()
 
         delegate.saveNewContact(contact: contact, forSection: currentSection)
         self.popupDismisser?.dismiss()
