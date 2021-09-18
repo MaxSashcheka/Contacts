@@ -27,6 +27,7 @@
 		DD53F5E026F35A4C00947C53 /* CustomHeaderViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53F5DF26F35A4C00947C53 /* CustomHeaderViewClass.swift */; };
 		DD53F5E426F35A6300947C53 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53F5E326F35A6300947C53 /* CustomHeaderView.xib */; };
 		DD564EF526F542C100FE9902 /* AddNewSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD564EF426F542C100FE9902 /* AddNewSectionViewController.swift */; };
+		DD7238BB26F6137800A0D4F9 /* ContactDefailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7238BA26F6137800A0D4F9 /* ContactDefailInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DD53F5DF26F35A4C00947C53 /* CustomHeaderViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderViewClass.swift; sourceTree = "<group>"; };
 		DD53F5E326F35A6300947C53 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
 		DD564EF426F542C100FE9902 /* AddNewSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSectionViewController.swift; sourceTree = "<group>"; };
+		DD7238BA26F6137800A0D4F9 /* ContactDefailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDefailInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				DD5333CA26F4D61D001DBA9A /* AddUserPopUpViewController.swift */,
 				DD564EF426F542C100FE9902 /* AddNewSectionViewController.swift */,
 				DD5333C726F4D5D6001DBA9A /* SBCardPopupViewController.swift */,
+				DD7238BA26F6137800A0D4F9 /* ContactDefailInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				DD53F5E026F35A4C00947C53 /* CustomHeaderViewClass.swift in Sources */,
 				DD53F5B826F34A1C00947C53 /* AppDelegate.swift in Sources */,
 				DD5333D126F50BEA001DBA9A /* DismissButton.swift in Sources */,
+				DD7238BB26F6137800A0D4F9 /* ContactDefailInfoViewController.swift in Sources */,
 				DD53F5DB26F3525400947C53 /* ContactsGroup.swift in Sources */,
 				DD5333CB26F4D61D001DBA9A /* AddUserPopUpViewController.swift in Sources */,
 				DD5333C226F4C5D5001DBA9A /* CustomNavigationButton.swift in Sources */,

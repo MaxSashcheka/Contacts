@@ -37,8 +37,8 @@ struct ContactsGroup {
         var contactDetailInfo: String
         var gender: Gender
         
-        var maleImages = [UIImage]()
-        var femaleImages = [UIImage]()
+        private var maleImages = [UIImage]()
+        private var femaleImages = [UIImage]()
         
         mutating func updateImage() {
             if gender == .male {

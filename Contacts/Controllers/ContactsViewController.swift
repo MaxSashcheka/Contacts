@@ -52,14 +52,8 @@ class ContactsViewController: UIViewController {
         addNewSectionButton.frame = CGRect(x: 0, y: 0, width: 118, height: 34)
         addNewSectionButton.setTitle("New section", for: .normal)
         addNewSectionButton.addTarget(self, action: #selector(addNewSectionButtonHandler), for: .touchUpInside)
-        
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonHandler))
-
-        
+    
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addNewSectionButton)
-        navigationItem.leftBarButtonItem = editButton
-        
-        
     }
     
     @objc private func addNewSectionButtonHandler() {
@@ -99,6 +93,18 @@ class ContactsViewController: UIViewController {
 //}
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailInfoVC = storyboard?.instantiateViewController(identifier: "ContactDefailInfoViewController") as? ContactDefailInfoViewController {
+            let contact = contactsDataSource[indexPath.section].contacts[indexPath.row]
+            detailInfoVC.configure(withContact: contact)
+            navigationController?.pushViewController(detailInfoVC, animated: true)
+        }
+        
+        
+        
+        
+    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
