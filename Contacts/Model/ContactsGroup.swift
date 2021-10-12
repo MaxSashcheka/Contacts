@@ -49,12 +49,12 @@ struct ContactsGroup {
         }
               
         init() {
-            for index in 0..<14 {
-                let image = UIImage(named: "image\(index)")!
+            for index in 0..<16 {
+                let image = UIImage(named: "student\(index)")!
                 maleImages.append(image)
             }
-            for index in 14..<27 {
-                let image = UIImage(named: "image\(index)")!
+            for index in 0..<16 {
+                let image = UIImage(named: "student\(index)")!
                 femaleImages.append(image)
             }
             

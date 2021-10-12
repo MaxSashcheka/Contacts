@@ -154,6 +154,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
                 as? ContactCellClass else { return UITableViewCell() }
         let contact = contactsDataSource[indexPath.section].contacts[indexPath.row]
         cell.configure(withContact: contact)
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
