@@ -13,15 +13,12 @@ protocol AddUserPopUpViewControllerDelegate {
 
 class AddUserPopUpViewController: UIViewController, SBCardPopupContent {
     
-    
     var popupDismisser: SBCardPopupDismisser?
     var allowsTapToDismissPopupCard = false
     var allowsSwipeToDismissPopupCard = false
     
     var currentSection: Int!
     var delegate: AddUserPopUpViewControllerDelegate!
-    
-    // MARK: - Outlets
     
     @IBOutlet weak var enterContactLabel: UILabel!
     @IBOutlet weak var enterContactMessageLabel: UILabel!
@@ -40,7 +37,6 @@ class AddUserPopUpViewController: UIViewController, SBCardPopupContent {
         enterContactMessageLabel.textColor = .lightGreenSea
         
         genderSegmentedControl.selectedSegmentTintColor = .lightGreenSea
-        
     }
     
     static func create(forSection section: Int,withDelegate delegate: AddUserPopUpViewControllerDelegate) -> UIViewController {
@@ -49,13 +45,11 @@ class AddUserPopUpViewController: UIViewController, SBCardPopupContent {
         popUpViewController.currentSection = section
         popUpViewController.delegate = delegate
         
-        
         return popUpViewController
     }
     
     
     @IBAction func saveContact(_ sender: Any) {
-        
         var contact = ContactsGroup.createNewContact()
         
         contact.contactName = contactNameTextField.text ?? "No name"

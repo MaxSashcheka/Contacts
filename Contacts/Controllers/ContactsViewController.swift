@@ -9,11 +9,7 @@ import UIKit
 
 class ContactsViewController: UIViewController {
 
-//    var contactsDataSource = [
-//        ContactsGroup(withNumberOfContacts: 0)
-//    ]
     var contactsDataSource = [ContactsGroup]()
-
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,10 +17,12 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
 
         navigationBarSetup()
-        
+        tableViewConfigure()
+    }
+    
+    private func tableViewConfigure() {
         tableView.delegate = self
         tableView.dataSource = self
-        
         
         let contactNib = UINib(nibName: "ContactCell", bundle: nil)
         tableView.register(contactNib, forCellReuseIdentifier: ContactCellClass.reuseIdentifier)
@@ -39,7 +37,6 @@ class ContactsViewController: UIViewController {
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black
         ]
-        
         let titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .semibold),
             NSAttributedString.Key.foregroundColor: UIColor.black
@@ -71,26 +68,7 @@ class ContactsViewController: UIViewController {
 
 }
 
-//MARK: UITableViewDelegate and UITableViewDataSource
-
-//unc tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//
-//    let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
-//        guard let self = self else { return }
-//        self.users[indexPath.section].remove(at: indexPath.row)
-//        self.tableView.deleteRows(at: [indexPath], with: .fade)
-//    }
-//    deleteAction.image = UIImage(systemName: "minus.circle")
-//
-//    let editAction = UIContextualAction(style: .normal, title: "Edit") { [weak self] (_, _, _) in
-//
-//        let alert = UIAlertController(title: "Do you want to edit ?", message: "You coild do so when we implement this functionality", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//        self?.present(alert, animated: true)
-//    }
-//
-//    return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
-//}
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -100,13 +78,10 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
             detailInfoVC.configure(withContact: contact)
             navigationController?.pushViewController(detailInfoVC, animated: true)
         }
-        
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
             guard let self = self else { return }
             self.contactsDataSource[indexPath.section].contacts.remove(at: indexPath.row)
@@ -120,6 +95,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
+        
         editAction.backgroundColor = .systemBlue
         editAction.image = UIImage(systemName: "pencil.circle")
         
@@ -142,7 +118,6 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if !contactsDataSource[section].isExpanded {
             return 0
         }
@@ -160,7 +135,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//MARK: CustomHeaderViewClassDelegate
+//MARK: - CustomHeaderViewClassDelegate
 
 extension ContactsViewController: CustomHeaderViewClassDelegate {
     func toggleSectionVisibility(forSection section: Int) {
@@ -182,10 +157,6 @@ extension ContactsViewController: CustomHeaderViewClassDelegate {
             tableView.insertRows(at: indexPathsToReload, with: .fade)
         }
         tableView.endUpdates()
-        
-//        tableView.beginUpdates()
-//        tableView.reloadSections([section], with: .automatic)  <- Плохой вариант
-//        tableView.endUpdates()
     }
     
     func createNewContact(forSection section: Int) {
@@ -198,7 +169,7 @@ extension ContactsViewController: CustomHeaderViewClassDelegate {
     }
 }
 
-//MARK: AddUserPopUpViewControllerDelegate
+//MARK: - AddUserPopUpViewControllerDelegate
 
 extension ContactsViewController: AddUserPopUpViewControllerDelegate {
     func saveNewContact(contact: ContactsGroup.Contact, forSection section: Int) {
@@ -211,19 +182,20 @@ extension ContactsViewController: AddUserPopUpViewControllerDelegate {
     }
 }
 
+//MARK: - AddNewSectionViewControllerDelegate
+
 extension ContactsViewController: AddNewSectionViewControllerDelegate {
     func saveNewSection(withName name: String?) {
-        
         var contactsGroup = ContactsGroup(withNumberOfContacts: 0)
+        
         if let sectionName = name {
             contactsGroup.sectionName = sectionName
         }
         
         let newSectionIndex = contactsDataSource.count
         contactsDataSource.insert(contactsGroup, at: newSectionIndex)
-
         let section = IndexSet(integer: newSectionIndex)
-
+        
         tableView.beginUpdates()
         tableView.insertSections(section, with: .left)
         tableView.endUpdates()

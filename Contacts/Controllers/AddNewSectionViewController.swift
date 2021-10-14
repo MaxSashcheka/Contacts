@@ -37,7 +37,6 @@ class AddNewSectionViewController: UIViewController, SBCardPopupContent {
 
     static func create(withDelegate delegate: AddNewSectionViewControllerDelegate) -> UIViewController {
         guard let popUpViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddNewSectionViewController") as? AddNewSectionViewController else { return UIViewController() }
-        
         popUpViewController.delegate = delegate
         
         return popUpViewController

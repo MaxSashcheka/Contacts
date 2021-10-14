@@ -9,7 +9,6 @@ import UIKit
 
 class ContactDefailInfoViewController: UIViewController {
 
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var contactNameLabel: UILabel!
     @IBOutlet weak var contactMessageLabel: UILabel!
